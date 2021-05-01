@@ -31,6 +31,7 @@ let g:jedi#completions_enabled = 0
 let g:jedi#use_splits_not_buffers = "right"
 
 Plug 'scrooloose/nerdtree'
+let NERDTreeShowHidden=1
 
 Plug 'neomake/neomake'
 let g:neomake_python_enabled_makers = ['flake8']
