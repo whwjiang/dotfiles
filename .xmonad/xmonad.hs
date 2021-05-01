@@ -192,7 +192,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
       , (f, m) <- [(viewScreen def, 0), (sendToScreen def, shiftMask)]]
 
 main = do
-    xmproc <- spawnPipe "xmobar ~/dotfiles/xmobar.hs"
+    xmproc <- spawnPipe "xmobar ~/dotfiles/.xmonad/xmobar.hs"
     xmonad $ ewmh def
         { modMask = mod4Mask
         , keys = myKeys
