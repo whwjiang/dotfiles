@@ -65,4 +65,4 @@ set softtabstop=2
 set shiftwidth=2
 
 " Automatically save the session when leaving Vim
-autocmd! VimLeave * mksession
+" autocmd! VimLeave * mksession
