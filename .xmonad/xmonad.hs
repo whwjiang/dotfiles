@@ -48,6 +48,7 @@ myTerminal = "kitty"
 myFocusedBorderColor = "#18bcff"
 myNormalBorderColor = "#7a7b7b"
 myBorderWidth = 2
+volumeScript = "/home/whjiang/dotfiles/volume.sh"
 
 myTabConfig = def { activeColor = "#0e0c15"
                   , inactiveColor = "#0e0c15"
@@ -96,6 +97,8 @@ myManageHook = composeAll [ isFullscreen --> doFullFloat ]
 myStartupHook :: X ()
 myStartupHook = do
   spawnOnce "nitrogen --restore &"
+  spawnOnce "compton &"
+  spawn $ volumeScript
 
 myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
@@ -104,8 +107,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     , ((modm .|. shiftMask, xK_p     ), spawn "launcher_colorful")
 
-    , ((modm              , xK_x     ), spawn "atom /home/whjiang/.xmonad/xmonad.hs")
-    , ((modm .|. shiftMask, xK_x     ), spawn "atom /home/whjiang/.xmobarrc/")
+    --, ((modm              , xK_x     ), spawn "atom /home/whjiang/.xmonad/xmonad.hs")
+    --, ((modm .|. shiftMask, xK_x     ), spawn "atom /home/whjiang/.xmobarrc/")
 
 
     -- close focused window
@@ -169,13 +172,16 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- See also the statusBar function from Hooks.DynamicLog.
     , ((modm              , xK_b     ), sendMessage ToggleStruts)
     , ((modm              , xK_q     ), spawn "xmonad --recompile; killall xmobar; xmonad --restart")
-    , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
+    , ((modm .|. shiftMask, xK_q     ), io exitSuccess)
 
     -- Decrease volume
-    , ((0, xF86XK_AudioLowerVolume), spawn $ "amixer -q set Master 5%-; ")
+    , ((modm, xK_Page_Down), spawn $ "amixer -q set Master 5%-; " ++ volumeScript)
 
     -- Increase volume
-    , ((0, xF86XK_AudioRaiseVolume), spawn $ "amixer -q set Master 5%+; ")
+    , ((modm  , xK_Page_Up), spawn $ "amixer -q set Master 5%+; " ++ volumeScript)
+
+    -- Toggle Spotify playing:
+    , ((modm   , xK_Insert), spawn $ "playerctl -p spotify play-pause")
 
     -- Toggle Spotify playing:
     , ((modm   , xK_Insert), spawn $ "playerctl -p spotify play-pause")
