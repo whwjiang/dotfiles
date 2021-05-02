@@ -43,6 +43,8 @@ Plug 'autozimu/LanguageClient-neovim', {
 
 Plug 'machakann/vim-highlightedyank'
 
+Plug 'ghifarit53/tokyonight-vim'
+
 call plug#end()
 
 autocmd VimEnter * NERDTree
@@ -66,3 +68,10 @@ set shiftwidth=2
 
 " Automatically save the session when leaving Vim
 " autocmd! VimLeave * mksession
+
+set termguicolors
+
+let g:tokyonight_style = 'night' " available: night, storm
+let g:tokyonight_enable_italic = 1
+
+colorscheme tokyonight
