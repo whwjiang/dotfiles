@@ -75,9 +75,9 @@ myLayout = avoidStruts $
   where
      -- The last parameter is fraction to multiply the slave window heights
      -- with. Useless here.
-     tiled = spacing 3 $ ResizableTall nmaster delta ratio []
+     tiled = spacing 5 $ ResizableTall nmaster delta ratio []
      -- In this layout the second pane will only show the focused window.
-     twopane = spacing 3 $ TwoPane delta ratio
+     twopane = spacing 5 $ TwoPane delta ratio
      -- The default number of windows in the master pane
      nmaster = 1
      -- Default proportion of screen occupied by master pane
