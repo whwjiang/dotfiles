@@ -103,13 +103,13 @@ myStartupHook = do
 myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- launch a terminal
-    [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
+    [ ((modm              , xK_Return), spawn $ XMonad.terminal conf)
 
-    , ((modm .|. shiftMask, xK_p     ), spawn "launcher_colorful")
+    , ((modm .|. shiftMask, xK_Return), spawn "launcher_colorful")
 
-    --, ((modm              , xK_x     ), spawn "atom /home/whjiang/.xmonad/xmonad.hs")
-    --, ((modm .|. shiftMask, xK_x     ), spawn "atom /home/whjiang/.xmobarrc/")
+    , ((modm .|. shiftMask, xK_p     ), spawn "powermenu")
 
+    , ((modm .|. shiftMask, xK_x     ), spawn "nvim /home/whjiang/dotfiles/.xmonad/")
 
     -- close focused window
     , ((modm              , xK_c     ), kill)
@@ -118,7 +118,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm              , xK_space ), sendMessage NextLayout)
 
     --  Reset the layouts on the current workspace to default
-    , ((modm .|. shiftMask, xK_space ), setLayout $ XMonad.layoutHook conf)
+    , ((modm .|. shiftMask, xK_r), setLayout $ XMonad.layoutHook conf)
     , ((modm .|. shiftMask, xK_h), sendMessage $ JumpToLayout "Mirror Tall")
     , ((modm .|. shiftMask, xK_v), sendMessage $ JumpToLayout "Tall")
     , ((modm .|. shiftMask, xK_f), sendMessage $ JumpToLayout "Full")
@@ -140,7 +140,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm              , xK_m     ), windows W.focusMaster  )
 
     -- Swap the focused window and the master window
-    , ((modm              , xK_Return), windows W.swapMaster)
+    , ((modm .|. shiftMask, xK_space ), windows W.swapMaster)
 
     -- Swap the focused window with the next window
     , ((modm .|. shiftMask, xK_j     ), windows W.swapDown  )
