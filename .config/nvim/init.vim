@@ -65,6 +65,8 @@ set tabstop=2
 set softtabstop=2
 " when indenting with '>', use 2 spaces width
 set shiftwidth=2
+set showtabline=2
+set noshowmode
 
 " Automatically save the session when leaving Vim
 " autocmd! VimLeave * mksession

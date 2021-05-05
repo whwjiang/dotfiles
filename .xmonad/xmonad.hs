@@ -175,16 +175,16 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_q     ), io exitSuccess)
 
     -- Decrease volume
-    , ((modm, xK_Page_Down), spawn $ "amixer -q set Master 5%-; " ++ volumeScript)
+    , ((modm              , xK_Page_Down), spawn $ "pactl set-sink-volume @DEFAULT_SINK@ -5%; " ++ volumeScript)
+    , ((modm .|. shiftMask, xK_Page_Down), spawn $ "pactl set-sink-volume @DEFAULT_SINK@ -1%; " ++ volumeScript)
 
     -- Increase volume
-    , ((modm  , xK_Page_Up), spawn $ "amixer -q set Master 5%+; " ++ volumeScript)
+    , ((modm               , xK_Page_Up), spawn $ "pactl set-sink-volume @DEFAULT_SINK@ +5%; " ++ volumeScript)
+    , ((modm .|. shiftMask , xK_Page_Up), spawn $ "pactl set-sink-volume @DEFAULT_SINK@ +1%; " ++ volumeScript)
 
     -- Toggle Spotify playing:
     , ((modm   , xK_Insert), spawn $ "playerctl -p spotify play-pause")
 
-    -- Toggle Spotify playing:
-    , ((modm   , xK_Insert), spawn $ "playerctl -p spotify play-pause")
     ]
 
     ++
