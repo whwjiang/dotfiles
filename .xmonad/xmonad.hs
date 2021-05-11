@@ -59,7 +59,7 @@ myTabConfig = def { activeColor = "#0e0c15"
                   , activeTextColor = "#18bcff"
                   , inactiveTextColor = "#dbd0b9"
                   , urgentTextColor = "#dbd0b9"
-                  , fontName = "xft:SF Mono:size=10:antialias=true:hinting=true"
+                  , fontName = "xft:SF Mono:size=9:antialias=true:hinting=true"
                   }
 
 myLayout = avoidStruts $
@@ -98,9 +98,9 @@ myStartupHook :: X ()
 myStartupHook = do
   spawnOnce "nitrogen --restore &"
   spawnOnce "compton &"
-  spawn $ volumeScript
+  spawnOnce volumeScript
 
-myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
+myKeys conf@XConfig {XMonad.modMask = modm} = M.fromList $
 
     -- launch a terminal
     [ ((modm              , xK_Return), spawn $ XMonad.terminal conf)
@@ -109,7 +109,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     , ((modm .|. shiftMask, xK_p     ), spawn "powermenu")
 
-    , ((modm .|. shiftMask, xK_x     ), spawn "nvim /home/whjiang/dotfiles/.xmonad/")
+    , ((modm .|. shiftMask, xK_x     ), spawn "code /home/whjiang/dotfiles/.xmonad/")
 
     -- close focused window
     , ((modm              , xK_c     ), kill)
@@ -175,12 +175,12 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_q     ), io exitSuccess)
 
     -- Decrease volume
-    , ((modm              , xK_Page_Down), spawn $ "pactl set-sink-volume @DEFAULT_SINK@ -5%; " ++ volumeScript)
-    , ((modm .|. shiftMask, xK_Page_Down), spawn $ "pactl set-sink-volume @DEFAULT_SINK@ -1%; " ++ volumeScript)
+    , ((modm              , xK_Page_Down), spawn $ "amixer -q sset Master 5%-; " ++ volumeScript)
+    , ((modm .|. shiftMask, xK_Page_Down), spawn $ "amixer -q sset Master 1%-; " ++ volumeScript)
 
     -- Increase volume
-    , ((modm               , xK_Page_Up), spawn $ "pactl set-sink-volume @DEFAULT_SINK@ +5%; " ++ volumeScript)
-    , ((modm .|. shiftMask , xK_Page_Up), spawn $ "pactl set-sink-volume @DEFAULT_SINK@ +1%; " ++ volumeScript)
+    , ((modm               , xK_Page_Up), spawn $ "amixer -q sset Master 5%+; " ++ volumeScript)
+    , ((modm .|. shiftMask , xK_Page_Up), spawn $ "amixer -q sset Master 1%+; " ++ volumeScript)
 
     -- Toggle Spotify playing:
     , ((modm   , xK_Insert), spawn $ "playerctl -p spotify play-pause")

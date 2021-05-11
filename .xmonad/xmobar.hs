@@ -1,6 +1,6 @@
 Config {
        font =
-       "xft:SFMono Nerd Font:size=11:bold=true:antialias=true:hinting=true"
+       "xft:SFMono Nerd Font:size=10:bold=true:antialias=true:hinting=true"
        , bgColor = "#0e0c15"
        , fgColor = "#dbd0b9"
        , position =     Top
@@ -10,7 +10,7 @@ Config {
    -- layout
    , sepChar =  "%"   -- delineator between plugin names and straight text
    , alignSep = "}{"  -- separator between left-right alignment
-   , template = "   %StdinReader% }{ %KCMI% | 墳 : %volume% | %date% "
+   , template = " <fc=#18bcff> </fc> %StdinReader% }{ %KCMI% | 墳 : %volume% | %date% "
 
    -- general behavior
    , lowerOnStart =     True    -- send to bottom of window stack on start
