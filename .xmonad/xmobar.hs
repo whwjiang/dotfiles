@@ -1,6 +1,6 @@
 Config {
        font =
-       "xft:SFMono Nerd Font:size=10:bold=true:antialias=true:hinting=true"
+       "xft:SFMono Nerd Font:size=10.5:bold=true:antialias=true:hinting=true"
        , bgColor = "#0e0c15"
        , fgColor = "#dbd0b9"
        , position =     Top
@@ -46,7 +46,7 @@ Config {
 
         -- time and date indicator
         --   (%F = y-m-d date, %a = day of week, %T = h:m:s time)
-        , Run Date " : <fc=#ABABAB>%F (%a)</fc>  : <fc=#ABABAB>%T</fc>" "date" 10
+        , Run Date " : %F (%a)  : %T" "date" 10
 
         ]
    } 

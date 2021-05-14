@@ -59,7 +59,7 @@ myTabConfig = def { activeColor = "#0e0c15"
                   , activeTextColor = "#18bcff"
                   , inactiveTextColor = "#dbd0b9"
                   , urgentTextColor = "#dbd0b9"
-                  , fontName = "xft:SF Mono:size=9:antialias=true:hinting=true"
+                  , fontName = "xft:SF Mono:size=10:antialias=true:hinting=true"
                   }
 
 myLayout = avoidStruts $
