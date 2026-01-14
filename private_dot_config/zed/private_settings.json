@@ -1,0 +1,54 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "languages": {
+    "Python": {
+      "prettier": {
+        "allowed": true
+      },
+      "auto_indent": true,
+      "tab_size": 2
+    }
+  },
+  "buffer_line_height": "standard",
+  "buffer_font_weight": 450.0,
+  "show_edit_predictions": false,
+  "icon_theme": "Colored Zed Icons Theme Dark",
+  "vim_mode": true,
+  "terminal": {
+    "font_size": 12.0,
+    "font_family": "Liga SFMono Nerd Font"
+  },
+  "base_keymap": "VSCode",
+  "relative_line_numbers": "enabled",
+  "gutter": {
+    "line_numbers": true
+  },
+  "minimap": {
+    "show": "never"
+  },
+  "buffer_font_family": "Liga SFMono Nerd Font",
+  "file_types": {
+    "json": [
+      "*.result"
+    ]
+  },
+  "show_whitespaces": "none",
+  "indent_guides": {
+    "enabled": false
+  },
+  "tab_size": 2,
+  "ui_font_size": 15.0,
+  "buffer_font_size": 13.0,
+  "theme": {
+    "mode": "system",
+    "light": "Carbonfox",
+    "dark": "VSCode Dark Modern"
+  }
+}
