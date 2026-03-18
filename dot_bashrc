@@ -24,5 +24,18 @@ if [ -d ~/.bashrc.d ]; then
 fi
 unset rc
 
+# Check for a running ssh-agent and start one if not found
+if [ -z "$SSH_AUTH_SOCK" ]; then
+  # Start new agent and set environment variables
+  eval "$(ssh-agent -s)" > /dev/null
+else
+  # Ensure the found agent is valid
+  if ! ssh-add -l > /dev/null; then
+    eval "$(ssh-agent -s)" > /dev/null
+  fi
+fi
+ssh-add ~/.ssh/id_ed25519
+
+
 eval "$(starship init bash)"
 . "$HOME/.cargo/env"

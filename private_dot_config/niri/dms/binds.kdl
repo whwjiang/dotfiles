@@ -119,7 +119,7 @@ binds {
     XF86Launch1 { screenshot; }
     Mod+Shift+E { quit; }
     Mod+T hotkey-overlay-title="Open Terminal" { spawn "ghostty"; }
-    Super+B cooldown-ms=1000 hotkey-overlay-title="Launch Browser" { spawn "/home/whjiang/AppImages/helium.appimage"; }
+    Super+B cooldown-ms=1000 hotkey-overlay-title="Launch Browser" { spawn "brave-browser"; }
     Mod+D repeat=false { toggle-overview; }
     Mod+Escape { toggle-keyboard-shortcuts-inhibit; }
     Mod+Shift+Slash { show-hotkey-overlay; }

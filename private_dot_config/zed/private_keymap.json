@@ -130,7 +130,6 @@
       ],
       "ctrl-alt-space": "editor::ShowCharacterPalette",
       "ctrl-;": "editor::ToggleLineNumbers",
-      "ctrl-'": "editor::ToggleSelectedDiffHunks",
       "ctrl-\"": "editor::ExpandAllDiffHunks",
       "ctrl-i": "editor::ShowSignatureHelp",
       "alt-g b": "git::Blame",
@@ -262,8 +261,6 @@
       "ctrl->": "agent::AddSelectionToThread",
       "ctrl-shift-e": "project_panel::ToggleFocus",
       "ctrl-shift-enter": "agent::ContinueThread",
-      "super-ctrl-b": "agent::ToggleBurnMode",
-      "alt-enter": "agent::ContinueWithBurnMode",
       "ctrl-y": "agent::AllowOnce",
       "ctrl-alt-y": "agent::AllowAlways",
       "ctrl-alt-z": "agent::RejectOnce",
@@ -271,9 +268,7 @@
   },
   {
     "context": "AgentPanel > NavigationMenu",
-    "bindings": {
-      "shift-backspace": "agent::DeleteRecentlyOpenThread",
-    },
+    "bindings": {},
   },
   {
     "context": "AgentPanel > Markdown",
@@ -781,7 +776,7 @@
       "alt-tab": "editor::AcceptEditPrediction",
       "alt-l": "editor::AcceptEditPrediction",
       "tab": "editor::AcceptEditPrediction",
-      "alt-right": "editor::AcceptPartialEditPrediction",
+      "alt-right": "editor::AcceptNextWordEditPrediction",
     },
   },
   {
@@ -789,7 +784,7 @@
     "bindings": {
       "alt-tab": "editor::AcceptEditPrediction",
       "alt-l": "editor::AcceptEditPrediction",
-      "alt-right": "editor::AcceptPartialEditPrediction",
+      "alt-right": "editor::AcceptNextWordEditPrediction",
     },
   },
   {
@@ -1374,4 +1369,9 @@
       "ctrl-shift-i": "branch_picker::FilterRemotes",
     },
   },
+  {
+    "bindings": {
+      "ctrl-'": "terminal_panel::ToggleFocus"
+    }
+  }
 ]

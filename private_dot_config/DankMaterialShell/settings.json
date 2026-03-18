@@ -274,6 +274,7 @@
   },
   "bluetoothDevicePins": {
     "preferredDevice": [
+      "FB:8E:C9:EE:CD:9A",
       "C8:7B:23:57:50:01",
       "D0:C0:50:C1:6A:F8"
     ]
@@ -398,8 +399,8 @@
   "customPowerActionReboot": "",
   "customPowerActionPowerOff": "",
   "updaterHideWidget": false,
-  "updaterUseCustomCommand": false,
-  "updaterCustomCommand": "",
+  "updaterUseCustomCommand": true,
+  "updaterCustomCommand": "sudo dnf update --refresh -y",
   "updaterTerminalAdditionalParams": "",
   "displayNameMode": "system",
   "screenPreferences": {},
@@ -453,10 +454,6 @@
       "rightWidgets": [
         {
           "id": "systemTray",
-          "enabled": true
-        },
-        {
-          "id": "systemUpdate",
           "enabled": true
         },
         {
