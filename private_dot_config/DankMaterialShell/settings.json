@@ -187,6 +187,17 @@
   "centeringMode": "geometric",
   "clockDateFormat": "dddd, MMMM d",
   "lockDateFormat": "",
+  "greeterRememberLastSession": true,
+  "greeterRememberLastUser": true,
+  "greeterEnableFprint": false,
+  "greeterEnableU2f": false,
+  "greeterWallpaperPath": "",
+  "greeterUse24HourClock": true,
+  "greeterShowSeconds": false,
+  "greeterPadHours12Hour": false,
+  "greeterLockDateFormat": "",
+  "greeterFontFamily": "",
+  "greeterWallpaperFillMode": "",
   "mediaSize": 1,
   "appLauncherViewMode": "list",
   "spotlightModalViewMode": "list",
@@ -309,6 +320,7 @@
   "matugenTemplateKcolorscheme": true,
   "matugenTemplateVscode": true,
   "matugenTemplateEmacs": true,
+  "matugenTemplateZed": true,
   "showDock": false,
   "dockAutoHide": false,
   "dockSmartAutoHide": false,
@@ -350,6 +362,8 @@
   "lockAtStartup": false,
   "enableFprint": true,
   "maxFprintTries": 15,
+  "enableU2f": false,
+  "u2fMode": "or",
   "lockScreenActiveMonitor": "all",
   "lockScreenInactiveColor": "#000000",
   "lockScreenNotificationMode": 0,
@@ -398,9 +412,9 @@
   "customPowerActionHibernate": "",
   "customPowerActionReboot": "",
   "customPowerActionPowerOff": "",
-  "updaterHideWidget": false,
-  "updaterUseCustomCommand": true,
-  "updaterCustomCommand": "sudo dnf update --refresh -y",
+  "updaterHideWidget": true,
+  "updaterUseCustomCommand": false,
+  "updaterCustomCommand": "",
   "updaterTerminalAdditionalParams": "",
   "displayNameMode": "system",
   "screenPreferences": {},
@@ -452,6 +466,10 @@
         }
       ],
       "rightWidgets": [
+        {
+          "id": "systemUpdate",
+          "enabled": true
+        },
         {
           "id": "systemTray",
           "enabled": true
